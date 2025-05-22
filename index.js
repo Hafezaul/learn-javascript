@@ -33,3 +33,61 @@ const namaMobil1 = {
     warna: "Hitam"
     };
 console.log(namaMobil1);
+
+// beda materi!!
+
+
+// array lanjutan ! 
+
+// memanggil salah satu array
+var merekMobil = ["Avanza", "Mazda", "Ayla"];
+console.log(merekMobil[1]); // output Mazda
+
+// mencari banyak array 
+
+jumlahMobil = merekMobil.length;
+console.log(jumlahMobil); // output 3
+
+// mengakses data array 
+
+var mobilPertama = merekMobil[0]; // output "Avanza"
+var mobilTerakhir = merekMobil[merekMobil.length - 1]; // output Ayla
+
+console.log(mobilTerakhir);
+
+// metode pada array 
+
+// mengubah  array menjadi string 
+// metode .toString
+console.log(merekMobil.toString()); // output : "Avanza,Mazda,Ayla"
+
+// metode .join
+
+console.log(merekMobil.join(" * ")); // output : "Avanza * Mazda * Ayla"
+
+// membuang data dari array .pop 
+
+// membuang langsung 
+merekMobil.pop();
+
+// memasukkan ke variabel lain
+
+var mobilku = merekMobil.pop();
+
+// memasukkan array 
+
+merekMobil.push("Fortuner")
+
+var merekMobil = merekMobil.push("Fortuner");
+
+// mengabungkan dua array 
+let mobilMahal = ["Fortuner", "Lamborghini"];
+let mobilBudget = ["Avanza", "Ayla"];
+let semuaMobil = mobilMahal.concat(mobilBudget);
+console.log(semuaMobil); // output : ["Fortuner", "Lamborghini", "Avanza", "Ayla"]
+
+// mengabung 3 array 
+var motor = ["Verza", "CB 1500R", "MegaPro"];
+
+let semuaKendaraan = mobilMahal.concat(mobilBudget, motor);
+console.log(semuaKendaraan); // output : ["Fortuner", "Lamborghini", "Avanza", "Ayla", "Verza", "CB 1500R", "MegaPro"]
