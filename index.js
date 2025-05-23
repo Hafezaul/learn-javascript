@@ -91,3 +91,34 @@ var motor = ["Verza", "CB 1500R", "MegaPro"];
 
 let semuaKendaraan = mobilMahal.concat(mobilBudget, motor);
 console.log(semuaKendaraan); // output : ["Fortuner", "Lamborghini", "Avanza", "Ayla", "Verza", "CB 1500R", "MegaPro"]
+
+// Iterasi Array 
+// iterasi data dari array dengan for 
+
+let kendaraanMobil = ["Avanza", "Ayla", "Fortuner", "Kijang"];
+for (let i = 0; i < kendaraanMobil.length; i++) {
+    console.log(kendaraanMobil[i]);
+}
+
+// dengan forEach 
+let teks = "<ul>"; // mulai dengan tag <ul>
+kendaraanMobil.forEach(fungsiMobil);
+teks += "</ul>"; // akhiri dengan tag </ul>
+
+function fungsiMobil(value) {
+    teks += "<li>" + value + "</li>";
+}
+console.log(kendaraanMobil)
+
+// metode .map
+
+var nomor1 = [2, 22, 82, 33]; 
+var nomor2 = nomor1.map(kalikanDua);
+
+function kalikanDua(value, index, array){
+    return value * 2 ;    
+}
+
+let aba = kalikanDua(nomor1[2]);
+console.log(nomor2);
+console.log(aba);
