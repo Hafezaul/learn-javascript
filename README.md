@@ -28,6 +28,4 @@ Mocha(nama pertama) --> LiveScript(diganti karena kerjasama dengan Netscape) -->
 </div>
 
 <br />
-### Peringantan 
-- Untuk materi bisa di lihat pada folder catatan, di bagian tersebut sudah di organisir sesuai materi.
-- Materi ini sangat cocok bagi para pemula yang ingin belajar JavaScript 
+
