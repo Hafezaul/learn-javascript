@@ -8,7 +8,7 @@ for (i = 0; i < 5; i++){
 };
 
 // infinite looping 
-// for (i = 0; i i >= 5; i++){}
+// for (i = 0; i >= 5; i++){}
 // Jangan di hidupkan woii. Bakal bikin laptop crash 
 
 // while 
