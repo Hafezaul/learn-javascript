@@ -106,7 +106,7 @@ output :
 */
 ```
 
-## B. Menghapus properti 
+### B. Menghapus properti 
 
 Dalam menghapus properti pada object maka kita harus mengakses object tersebut dengan menggunakan `[]` dan menggunakan keyword `delete`. 
 
@@ -123,3 +123,150 @@ let motor = [
 delete motor[0].tahun;
 ```
 Dalam kode tersebut secara otomatis akan menghapus properti yang berisi tahun dan untuk mengakses object kita hanya menggunakan angka 0 saja, karena object bukan array yang bisa di akses secara langsung(Jika object tersebut hanya satu) Namun, jika array tersebut memiliki banyak object maka urutkan saja sesuaikan dengan urutan object tersebut. Hal ini juga berlaku pada penambahan properti. 
+
+## 3. `this`
+
+`this` adalah keyword khusus dalam JavaScript yang merujuk ke object tempat di mana kode itu sedang dijalankan.
+
+Contoh 
+
+```
+function sapa() {
+  console.log("Halo, saya " + this.nama);
+}
+
+const orang1 = { nama: "Aldi", sapa: sapa };
+const orang2 = { nama: "Budi", sapa: sapa };
+
+orang1.sapa(); // Halo, saya Aldi
+orang2.sapa(); // Halo, saya Budi
+
+```
+
+`this` tersebut akan mengakses properti yang dituju(`nama`), kemudian ia akan di tampilkan pada console. Jika menggunakan `this` ini pada luar object maka ia akan di anggap sebagai global object(window di browser). 
+ 
+Jadi gunakan `this` ini ketika ;
+
+- Kamu ingin mengakses data dalam object dari method
+- Kamu ingin method tersebut bisa digunakan ulang di banyak object
+
+Catatan tambahan mengenai `this`
+
+| Lokasi `this`        | Mengacu ke                                    |
+| -------------------- | --------------------------------------------- |
+| Dalam object method  | object itu sendiri                            |
+| Dalam function biasa | global object (`window`)                      |
+| Dalam event DOM      | elemen DOM yang ditrigger                     |
+| Dalam arrow function | *Tidak punya `this` sendiri*, ambil dari luar |
+
+## 4. `for....in`
+
+`for...in` adalah loop (perulangan) yang digunakan untuk mengakses semua nama properti (key) dalam sebuah object.
+
+Contoh 
+
+```
+  let user = 
+    { 
+        nama : "Faris Iskandar Hafidz",
+        umur : 17, 
+        schol : "SMK IT Informatika"
+    };
+
+  for (let key in user) {
+    console.log(user);
+    console.log(user[key]);
+}
+``` 
+
+- key dalam for...in akan mewakili setiap properti dalam object.
+- Untuk ambil nilainya, gunakan bracket notation: user[key]
+- Tidak bisa pakai user.key, karena itu mengakses literal "key".
+
+output 
+
+```
+{
+  nama: 'Faris Iskandar Hafidz',
+  umur: 17,
+  schol: 'SMK IT Informatika'
+}
+Faris Iskandar Hafidz
+{
+  nama: 'Faris Iskandar Hafidz',
+  umur: 17,
+  schol: 'SMK IT Informatika'
+}
+17
+{
+  nama: 'Faris Iskandar Hafidz',
+  umur: 17,
+  schol: 'SMK IT Informatika'
+}
+SMK IT Informatika
+```
+Gunakan `for...in` ketika ; 
+
+- Menampilkan semua properti di sebuah object
+- Menyalin/memodifikasi properti
+- Mengecek isi object tanpa tahu isinya secara spesifik
+
+⚠️ Catatan Penting:
+- `for...in` tidak digunakan untuk array secara umum, karena array punya index numerik.
+- Untuk array, sebaiknya pakai `for...of` atau `.forEach()`.
+
+## 5. Akses properti dengan []
+
+
+JavaScript menyediakan dua cara untuk mengakses properti dalam sebuah object, yaitu:
+
+---
+
+### 1. Dot Notation (`.`)
+
+Digunakan ketika nama properti **sudah pasti (statis)** dan **tidak mengandung spasi atau karakter khusus**.
+
+Contoh 
+
+```
+let user = {
+  nama: "Faris",
+  umur: 17
+};
+
+console.log(user.nama); // Output: Faris
+```
+
+2. Bracket Notation ([])
+Digunakan saat:
+
+- Nama properti disimpan dalam variabel
+- Nama properti memiliki spasi atau karakter khusus
+
+Contoh 
+
+```
+let user = {
+  nama: "Faris",
+  umur: 17,
+  "nama lengkap": "Faris Iskandar Hafidz"
+};
+
+let prop = "umur";
+
+console.log(user["nama"]);          // Output: Faris
+console.log(user[prop]);            // Output: 17
+console.log(user["nama lengkap"]);  // Output: Faris Iskandar Hafidz
+```
+### Perbandingan Dot ( . ) dan Bracket ( [] )
+
+| Kebutuhan                                       | Dot (`.`) | Bracket (`[]`) |
+| ----------------------------------------------- | --------- | -------------- |
+| Nama properti statis                            | ✅         | ✅              |
+| Nama properti dari variabel                     | ❌         | ✅              |
+| Nama properti dengan spasi atau karakter khusus | ❌         | ✅              |
+
+### Tips 
+
+- Gunakan dot notation saat memungkinkan karena lebih singkat dan mudah dibaca.
+- Gunakan bracket notation saat properti dinamis atau tidak bisa dituliskan langsung (misal: dari user input, nama dengan spasi, dll).
