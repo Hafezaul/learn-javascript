@@ -73,3 +73,37 @@ switch (lampu) {
     default:
         break;
 }
+
+// latihan object dan array method 
+
+const nilaiUjian = {
+    matematika : 90, 
+    bahasaInggris : 95, 
+    bahasaArab : 100, 
+    seniDanBudaya : 45, 
+    bahasaIndonesia : 80, 
+    hadits : 90 
+};
+
+const ambilUjian = Object.values(nilaiUjian).reduce ((a, b) => a + b);
+console.log(ambilUjian);
+
+// mengabungkan seluruh object method 
+
+const nilai = { 
+    matematika : 80, 
+    bahasaInggris : 90, 
+    bahasaArab : 100, 
+    bahasaIndonesia : 85, 
+    hadits : 89, 
+    seniBudaya : 65, 
+    sejarah : 90, 
+    ekonomi : 80,
+}; 
+
+const ambilNilai = Object.entries(nilai); 
+const ambilPropertiNilai = Object.keys(nilai);
+const ambilValuesNilai = Object.values(nilai);
+
+console.log("Saya mengambil seluruh nilai " + ambilNilai + ", juga saya mengambil propert nilai " + ambilPropertiNilai + ", dan juga saya mengambil kelipatan nilai " + ambilValuesNilai + "");
+
