@@ -11,3 +11,19 @@ Object.assign(target, source1, source2, ...);
 
 - `target`: objek tujuan (hasil akhirnya akan tersimpan di sini).
 - `source` : satu atau lebih objek yang isinya akan disalin ke target.
+
+Contoh 
+
+```
+const data1 = [{ 
+    nama : "Faris Iskandar",
+}]; 
+const data2 = [{ 
+    nomor : 2,
+    kelas : 10,
+}]; 
+
+let copyData = Object.assign({}, data1[0], data2[0]);
+
+console.log(copyData)
+```
