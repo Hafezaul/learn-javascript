@@ -11,4 +11,6 @@ const dataUser = {
 const fixDataUser = Object.freeze(dataUser); 
 dataUser.nama = "Faris Saja"; 
 console.log(fixDataUser);
-dataUser.alamat.kota = "Jakarta"
+console.log(Object.isSealed(dataUser));
+
+// dataUser.alamat.kota = "Jakarta"
