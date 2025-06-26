@@ -7,8 +7,18 @@
     <title>Document</title>
 </head>
 <body>
-    <h1 id="myHeading1">Hello world</h1>
+    <ul>
+        <li class="item">Satu</li>
+        <li class="item">Dua</li>
+        <li class="item">Tiga</li>
+      </ul>
+    <script>
 
-    <script src="main.js"></script>
+const semuaItem = document.querySelectorAll(".item");
+semuaItem.forEach(item => {
+  console.log(item.textContent);
+});
+
+    </script>
 </body>
 </html>
