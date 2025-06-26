@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Latihan DOM Dasar</title>
+</head>
+<body>
+
+  <h1 id="judul">Belajar DOM JavaScript</h1>
+
+  <div class="container">
+    <p class="deskripsi">Paragraf satu</p>
+    <p class="deskripsi">Paragraf dua</p>
+    <p class="deskripsi">Paragraf tiga</p>
+  </div>
+
+  <ul>
+    <li class="item">Item A</li>
+    <li class="item">Item B</li>
+    <li class="item">Item C</li>
+  </ul>
+
+
+  <!--latihan part 2-->
+
+  
+  <h2 id="judul-halaman">Daftar Siswa</h2>
+
+  <ul>
+    <li class="siswa">Alya</li>
+    <li class="siswa">Faris</li>
+    <li class="siswa">Raka</li>
+    <li class="siswa">Zahra</li>
+  </ul>
+  
+  <p class="keterangan">Total siswa akan ditampilkan di sini.</p>
+  
+<!--Part 3 latihan-->
+
+<h2>Data Nilai Siswa</h2>
+<ul id="daftar-siswa"></ul>
+<p id="keterangan"></p>
+
+
+
+  <script>
+// latihan part 1
+let a = document.getElementById("judul")
+let b = document.querySelector(".deskripsi")
+let c = document.querySelectorAll(".item")
+
+if (a) {
+    console.log(a.textContent);  
+} else { 
+    console.log("Element gagal di pangil");
+}
+
+if (b) { 
+    console.log(b.textContent);
+} else {
+    console.log("Element gagal di panggil");
+}
+
+if (c) {
+    c.forEach((i, index) => {
+    console.log(`Item ke-${index + 1}: ${i.textContent}`);
+  });
+}
+
+// latihan part 2
+
+
+const aa = document.getElementById("judul-halaman");
+ const bb = document.querySelectorAll(".siswa");
+ const cc = document.querySelector(".keterangan");
+
+
+if (aa) { 
+    console.log(aa.textContent);
+} else { 
+    console.log("Konten gagal dimuat :( ");
+}
+ if (bb) {
+    bb.forEach((i, index) => {
+        console.log(`Siswa ${index + 1}: ${i.textContent}`);   
+    });
+ } else {
+    console.log("Tidak ada data");
+ }
+
+ if (cc) {
+    console.log(`Terdapat ${bb.length} siswa yang terdaftar`);
+    cc.textContent = `Terdapat ${bb.length} siswa terdaftar.`;
+ }
+
+ // part 3
+
+    // data siswa
+    const siswa = [
+  { nama: "Faris", nilai: 92 },
+  { nama: "Alya", nilai: 85 },
+  { nama: "Zahra", nilai: 77 },
+  { nama: "Raka", nilai: 63 },
+  { nama: "Bagas", nilai: 55 }
+];
+
+const daftar = document.getElementById("daftar-siswa");
+const info = document.getElementById("keterangan");
+
+siswa.forEach((s) => {
+  const item = document.createElement("li");        // Buat <li>
+  item.textContent = `${s.nama} - Nilai: ${s.nilai}`; // Isi kontennya
+
+  // Beri warna berdasarkan nilai
+  if (s.nilai >= 80) {
+    item.style.color = "green";
+  } else if (s.nilai >= 60) {
+    item.style.color = "orange";
+  } else {
+    item.style.color = "red";
+  }
+
+  daftar.appendChild(item); // Masukkan <li> ke <ul>
+});
+
+const total = siswa.reduce((acc, s) => acc + s.nilai, 0);
+const rata = total / siswa.length;
+info.textContent = `Rata-rata nilai: ${rata.toFixed(1)}`;
+
+  </script>
+</body>
+</html>
