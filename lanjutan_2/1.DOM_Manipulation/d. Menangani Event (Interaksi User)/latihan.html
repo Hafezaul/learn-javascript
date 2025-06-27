@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button id="myBtn">Klik aku ya :v</button>
+    <br><br><br>
+    <input id="text" type="name">
+    <button id="myInput">Cek aku</button>
+    <script>
+const ambilBtn = document.getElementById("myBtn"); 
+const ambilNama = document.getElementById("text");
+const ambilInput = document.getElementById("myInput");
+
+// ambil aksi pada buttob
+ambilBtn.addEventListener('click', () => {
+    console.log("Kya Kya Kya");
+});
+
+// ambil aksi pada input 
+ambilNama.addEventListener('input', () => {
+    console.log("user sedang mengetik...");
+});
+
+// aksi pada submit dengan mengambil data pada input
+ambilInput.addEventListener('submit', (el) => {
+    el.preventDefault();
+    console.log("Data berhasil dikirim");
+    console.log(ambilNama.value);
+})
+    </script>
+</body>
+</html>

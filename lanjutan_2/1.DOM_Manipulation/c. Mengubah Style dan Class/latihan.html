@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Latihan DOM Dasar</title>
+</head>
+<body>
+  <h1 id="judul">Halo Faris!</h1>
+
+  <button id="merahkan">Merahkan Teks</button>
+  <button id="modeGelap">Toggle Mode Gelap</button>
+  
+  <style>
+    .dark {
+      background-color: black;
+      color: white;
+    }
+  
+    .merah {
+      color: red;
+    }
+  </style>
+  
+  <script>
+ const judulWarna = document.getElementById("judul");
+ const modeGelap = document.getElementById("modeGelap");
+ 
+ modeGelap.addEventListener("click", function() {
+   judulWarna.classList.toggle("dark");
+ });
+
+ const merahkan = document.getElementById("merahkan");
+ merahkan.addEventListener("click", function() {
+   judulWarna.classList.toggle("merah");
+ });
+  </script>
+</body>
+</html>
