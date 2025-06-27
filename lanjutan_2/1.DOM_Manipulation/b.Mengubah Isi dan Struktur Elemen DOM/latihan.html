@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Latihan DOM Dasar Tingkat 2</title>
+</head>
+<body>
+<p id="myPara"></p>
+<h3 id="myHeading"></h3>
+  
+<h1 id="myHead">HIHIHIH</h1>
+  <script> 
+  // ,menambahkan konten
+const a = document.getElementById("myHeading");
+a.textContent = "Hello world!"; 
+
+let p1 = document.createElement("p");
+p1.textContent = "faris"
+a.appendChild(p1);
+ // menghapus konten
+const b = document.getElementById("myHead"); 
+b.remove()
+  </script>
+</body>
+</html>
