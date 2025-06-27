@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Form Pendaftaran Event</h2>
+
+<form id="form-daftar">
+  <label>Nama Lengkap:</label><br>
+  <input type="text" id="nama" placeholder="Masukkan nama"><br><br>
+
+  <label>Email:</label><br>
+  <input type="email" id="email" placeholder="Masukkan email"><br><br>
+
+  <label>Nomor WhatsApp:</label><br>
+  <input type="tel" id="wa" placeholder="Contoh: 081234567890"><br><br>
+
+  <button type="submit" id="submit">Daftar Sekarang</button>
+</form>
+
+<p id="peringatan" style="color: red;"></p>
+<p id="sukses" style="color: green;"></p>
+<script>
+const form = document.getElementById("form-daftar");
+const peringatan = document.getElementById("peringatan");
+const sukses = document.getElementById("sukses");
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault(); // Cegah reload
+
+  // Ambil nilai input SAAT tombol submit diklik
+  const nama = document.getElementById("nama").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const wa = document.getElementById("wa").value.trim();
+
+  // Reset pesan
+  peringatan.textContent = "";
+  sukses.textContent = "";
+
+  // Validasi kosong
+  if (nama === "" || email === "" || wa === "") {
+    peringatan.textContent = "Mohon lengkapi semua field!";
+    return;
+  }
+
+  // Jika valid
+  sukses.textContent = `Terima kasih ${nama}, kamu telah terdaftar! Kami akan menghubungi kamu di ${wa}`;
+  form.reset(); // Reset form
+});
+</script>
+</body>
+</html>
