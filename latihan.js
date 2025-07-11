@@ -1,4 +1,4 @@
-/*
+
     // variabel 
 
     let contohSederhana = "Faris Iskandar Hafidz"; 
@@ -107,4 +107,4 @@
     const ambilValuesNilai = Object.values(nilai);
 
     console.log("Saya mengambil seluruh nilai " + ambilNilai + ", juga saya mengambil propert nilai " + ambilPropertiNilai + ", dan juga saya mengambil kelipatan nilai " + ambilValuesNilai + "");
-*/
+

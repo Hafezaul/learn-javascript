@@ -28,8 +28,8 @@ const form = document.getElementById("form-daftar");
 const peringatan = document.getElementById("peringatan");
 const sukses = document.getElementById("sukses");
 
-form.addEventListener("submit", function (e) {
-  e.preventDefault(); // Cegah reload
+form.addEventListener("submit", function (aksa) {
+  aksa.preventDefault(); // Cegah reload
 
   // Ambil nilai input SAAT tombol submit diklik
   const nama = document.getElementById("nama").value.trim();

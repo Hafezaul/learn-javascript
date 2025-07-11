@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Website Sederhana Bootstrap</title>
+  <!-- Bootstrap 5 CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    /* Toggle dark mode menggunakan checkbox + CSS */
+    body.dark-mode {
+      background-color: #121212;
+      color: white;
+    }
+    body.dark-mode .navbar {
+      background-color: #1f1f1f;
+    }
+  </style>
+</head>
+<body id="darkLight" class="light-mode">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light px-3">
+    <div class="container-fluid">
+      <!-- Tombol dark mode kiri -->
+      <span class="me-3">
+       <button id="darkMode" class="btn">🌙</button>
+      </span>
+      <a class="navbar-brand" href="#">MyWebsite</a>
+    </div>
+  </nav>
+
+  <!-- Konten Utama -->
+  <div class="container mt-4">
+    <h1 class="display-4">Selamat Datang di Situs Saya</h1>
+    <p id="myPara" class="lead">Ini adalah contoh website sederhana menggunakan Bootstrap tanpa JavaScript. Di bawah ini terdapat gambar.</p>
+    
+    <img src="https://tse4.mm.bing.net/th?id=OIP.DN7ToydkJZEdVaJVK_NhvwHaHa&pid=Api&P=0&h=180" class="img-fluid rounded" alt="Contoh Gambar">
+  </div>
+<script>
+const tombol = document.getElementById("darkMode"); 
+const gelapMode = document.getElementById("darkLight"); 
+const gantiTeks = document.getElementById("myPara");
+
+// menganti warna pada paragraf 
+
+gantiTeks.style.color = "red";
+
+// menganti background dan warna tulisan 
+tombol.addEventListener("click", function(){
+
+    gelapMode.classList.toggle("dark-mode");
+
+    if (tombol.textContent === "🌙") {
+        tombol.textContent = "☀️";
+    } else {
+        tombol.textContent = "🌙";
+    }
+    console.log("Dark Mode")
+});
+
+</script>
+</body>
+</html>
